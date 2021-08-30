@@ -1,9 +1,14 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { Typography, Grid, useTheme } from "@material-ui/core";
 
 export default function Home() {
+  const theme = useTheme();
   return (
-    <div className={styles.container}>
+    <Grid
+      container
+      className={styles.container}
+      sx={{ backgroundColor: theme.palette.primary.main }}>
       <Head>
         <title>Welcome to my portfolio</title>
         <meta name='description' content='Software developer portfolio' />
@@ -22,8 +27,10 @@ export default function Home() {
         />
       </Head>
       <div>
-        <h1>Welcome to my portfolio!</h1>
+        <Typography variant='h1' color='secondary.contrastText' textAlign='center'>
+          Welcome to my portfolio!
+        </Typography>
       </div>
-    </div>
+    </Grid>
   );
 }
