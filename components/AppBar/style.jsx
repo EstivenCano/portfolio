@@ -1,5 +1,8 @@
 import { styled } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
+import Select from "@material-ui/core/Select";
+import FormControl from "@material-ui/core/FormControl";
+import { outlinedInputClasses } from "@material-ui/core/OutlinedInput";
 
 export const ThemeSwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -19,15 +22,18 @@ export const ThemeSwitch = styled(Switch)(({ theme }) => ({
       },
       "& + .MuiSwitch-track": {
         opacity: 1,
-        backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+        backgroundColor:
+          theme.palette.mode === "dark"
+            ? theme.palette.primary.main
+            : theme.palette.primary.dark,
       },
     },
   },
   "& .MuiSwitch-thumb": {
     backgroundColor:
       theme.palette.mode === "dark"
-        ? theme.palette.neutral.main
-        : theme.palette.darker.main,
+        ? theme.palette.neutral.light
+        : theme.palette.darker.light,
     width: 32,
     height: 32,
     "&:before": {
@@ -46,7 +52,47 @@ export const ThemeSwitch = styled(Switch)(({ theme }) => ({
   },
   "& .MuiSwitch-track": {
     opacity: 1,
-    backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+    backgroundColor:
+      theme.palette.mode === "dark"
+        ? theme.palette.neutral.light
+        : theme.palette.primary.dark,
     borderRadius: 20 / 2,
   },
+}));
+
+export const SelectLan = styled(Select)(({ theme }) => ({
+  height: 35,
+  borderRadius: 20,
+  fontSize: 15,
+  background:
+    theme.palette.mode === "dark"
+      ? theme.palette.primary.main
+      : theme.palette.primary.main,
+  "& .MuiOutlinedInput-notchedOutline": {
+    borderColor: "transparent",
+  },
+  "&:hover": {
+    background:
+      theme.palette.mode === "dark"
+        ? theme.palette.neutral.light
+        : theme.palette.primary.dark,
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderColor: "transparent",
+    },
+  },
+}));
+
+export const FormControlLan = styled(FormControl)(({ theme }) => ({
+  /* Change border color of the form control when is selected */
+  [`& .${outlinedInputClasses.root}.${outlinedInputClasses.focused} .${outlinedInputClasses.notchedOutline}`]:
+    {
+      borderColor:
+        theme.palette.mode === "dark"
+          ? theme.palette.primary.main
+          : theme.palette.primary.main,
+    },
+}));
+
+export const LinkText = styled("a")(({ theme }) => ({
+
 }));

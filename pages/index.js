@@ -1,14 +1,17 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { Typography, Grid, useTheme } from "@material-ui/core";
+import { useSelector } from "react-redux";
 
 export default function Home() {
   const theme = useTheme();
+  const data = useSelector((state) => state.data.data);
+
   return (
     <Grid
       container
       className={styles.container}
-      sx={{ backgroundColor: theme.palette.primary.main }}>
+      sx={{ backgroundColor: theme.palette.primary.dark }}>
       <Head>
         <title>Welcome to my portfolio</title>
         <meta name='description' content='Software developer portfolio' />
@@ -27,8 +30,11 @@ export default function Home() {
         />
       </Head>
       <div>
-        <Typography variant='h1' color='secondary.contrastText' textAlign='center'>
-          Welcome to my portfolio!
+        <Typography
+          variant='h1'
+          color='secondary.contrastText'
+          textAlign='center'>
+          {data.title}
         </Typography>
       </div>
     </Grid>
