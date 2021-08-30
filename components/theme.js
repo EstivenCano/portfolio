@@ -1,15 +1,9 @@
 import { createTheme } from "@material-ui/core/styles";
 
 const typography = {
-  fontFamily: ["Merienda", "MontserratAlternates", "Roboto"].join(","),
+  fontFamily: ["MontserratAlternates", "Merienda", "Roboto"].join(","),
   h1: {
     fontFamily: "Merienda",
-  },
-  subtitle1: {
-    fontFamily: "MontserrateAlternates",
-  },
-  body1: {
-    fontFamily: "MontserrateAlternates",
   },
 };
 
@@ -35,9 +29,10 @@ export const lightTheme = createTheme({
       light: "#79493C",
       dark: "#341007",
     },
+    mode: "light",
   },
   typography: {
-      ...typography
+    ...typography,
   },
 });
 
@@ -63,8 +58,9 @@ export const darkTheme = createTheme({
       light: "#FFA07C",
       dark: "#B2542F",
     },
+    mode: "dark",
   },
   typography: {
-    ...typography
+    ...typography,
   },
 });
