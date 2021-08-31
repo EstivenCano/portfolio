@@ -4,6 +4,10 @@ const typography = {
   fontFamily: ["MontserratAlternates", "Merienda", "Roboto"].join(","),
   h1: {
     fontFamily: "Merienda",
+    fontSize: "60px",
+    "@media (min-width:800px)": {
+      fontSize: "80px",
+    },
   },
 };
 
