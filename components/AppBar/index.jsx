@@ -13,7 +13,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Link from "next/link";
 
 // Theme management
-import { ThemeSwitch, SelectLan, FormControlLan, LinkText } from "./style";
+import { ThemeSwitch, SelectLan, FormControlLan, StyledLink } from "./style";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../../redux/features/theme.slice";
 import { setLanguage, setData } from "../../redux/features/data.slice";
@@ -37,9 +37,11 @@ export default function MainAppBar() {
             <MenuIcon />
           </IconButton>
           <Grid item xs={10}>
-            <Link href='/'>
-              <a>{data.title}</a>
-            </Link>
+            {data.links.map((link, index) => (
+              <Link key={index} href={link.path} passHref>
+                <StyledLink>{link.name}</StyledLink>
+              </Link>
+            ))}
           </Grid>
           <FormControlLan sx={{ mr: 2, minWidth: 120 }}>
             <SelectLan

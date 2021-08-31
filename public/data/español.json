@@ -1,3 +1,39 @@
 {
-    "title": "¡Bienvenido a mi portafolio!"
+  "links": [
+    {
+      "name": "Inicio",
+      "path": "/"
+    },
+    {
+      "name": "Información",
+      "path": "/aboutme"
+    },
+    {
+      "name": "Tecnologías",
+      "path": "/technologies"
+    },
+    {
+      "name": "Proyectos",
+      "path": "/projects"
+    },
+    {
+      "name": "Contacto",
+      "path": "/contact"
+    }
+  ],
+  "home": {
+    "title": "¡Bienvenidos a mi portafolio!"
+  },
+  "aboutMe": {
+    "title": "Acerca de mi"
+  },
+  "technologies": {
+    "title": "Tecnologías"
+  },
+  "projects": {
+    "title": "Proyectos"
+  },
+  "contact": {
+    "title": "Contacto"
+  }
 }

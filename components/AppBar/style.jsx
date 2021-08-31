@@ -93,6 +93,12 @@ export const FormControlLan = styled(FormControl)(({ theme }) => ({
     },
 }));
 
-export const LinkText = styled("a")(({ theme }) => ({
-
+export const StyledLink = styled("a")(({ theme }) => ({
+  "&: after": {
+    color: theme.palette.neutral.light,
+    transform: "translateX(22px)",
+  },
+  "&: hover": {
+    color: theme.palette.neutral.light,
+  },
 }));

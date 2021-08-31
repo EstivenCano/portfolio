@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export default function Home() {
   const theme = useTheme();
-  const data = useSelector((state) => state.data.data.home);
+  const data = useSelector((state) => state.data.data.projects);
 
   return (
     <Grid
